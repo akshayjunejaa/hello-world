@@ -10,12 +10,12 @@ pipeline {
                git credentialsId: 'git_credentials', url: 'https://github.com/ravdy/hello-world.git'
             }
         }
-        #stage("build code"){
-            #steps{
-              #sh "mvn clean install"
-            #}
+         stage("build code"){
+             steps{
+               sh "mvn clean install"
+             }
                  
-                #}
+                }
             }
         }
     }
