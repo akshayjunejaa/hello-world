@@ -1,12 +1,17 @@
 pipeline {
     agent any
-    tools {
-        maven '/usr/local/src/apache-maven' 
-    }
     stages {
-        stage('Example') {
+        stage('Example Build') {
             steps {
-                sh 'mvn --version'
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
+            when {
+                branch 'production'
+            }
+            steps {
+                echo 'Deploying'
             }
         }
     }
