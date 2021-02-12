@@ -1,17 +1,13 @@
 pipeline {
     agent any
-    environment {
-        PATH = "/usr/local/src/apache-maven"
+    tools {
+        maven 'apache-maven-3.0.1' 
     }
     stages {
-        stage("Code checkout"){
-        }
-        stage("Build code"){
-            steps{
-              sh "mvn clean install"
+        stage('Example') {
+            steps {
+                sh 'mvn --version'
             }
-        }
-        stage("Deploy"){
         }
     }
 }
