@@ -1,32 +1,17 @@
 pipeline {
     agent any
-
+    environment {
+        PATH = "/usr/local/src/apache-maven"
+    }
     stages {
-        stage ('Compile Stage') {
-
-            steps {
-                withMaven(maven : '/usr/local/src/apache-maven') {
-                    sh 'mvn clean compile'
-                }
+        stage("Code checkout"){
+        }
+        stage("Build code"){
+            steps{
+              sh "mvn clean install"
             }
         }
-
-        stage ('Testing Stage') {
-
-            steps {
-                withMaven(maven : '/usr/local/src/apache-maven') {
-                    sh 'mvn test'
-                }
-            }
-        }
-
-
-        stage ('Deployment Stage') {
-            steps {
-                withMaven(maven : '/usr/local/src/apache-maven') {
-                    sh 'mvn deploy'
-                }
-            }
+        stage("Deploy"){
         }
     }
 }
