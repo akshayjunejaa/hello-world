@@ -4,7 +4,7 @@ pipeline {
 		maven '/usr/local/src/apache-maven' 
 	}
 	stages {
-		stages('example') {
+		stage('example') {
 			steps {
 				sh 'mvn --version'
 			}
