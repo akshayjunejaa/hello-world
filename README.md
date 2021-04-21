@@ -1,5 +1,5 @@
 # maven-project
 
-Simple
+Simple text
 
 
