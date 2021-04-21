@@ -1,3 +1,4 @@
 # maven-project
 
 Simple
+hello
