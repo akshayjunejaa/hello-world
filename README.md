@@ -1,4 +1,4 @@
 # maven-project
 
-Simple world!!
+Simple world
 
